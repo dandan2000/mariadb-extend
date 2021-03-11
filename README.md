@@ -1,7 +1,7 @@
 Extending image
 This image can be extended in Openshift using the Source build strategy.
 
-oc new-app -i mariadb:10.3 https://github.com/dandan2000/mariadb-extend \
+oc new-app -i mariadb:10.3~https://github.com/dandan2000/mariadb-extend \
     --name my-mariadb-rhel8 \
     --context-dir=examples/extend-image \
     --env MYSQL_OPERATIONS_USER=opuser \
@@ -37,6 +37,9 @@ The root user has no password set by default, only allowing local connections. Y
 
 To disable remote root access, simply unset MYSQL_ROOT_PASSWORD and restart the container.
 
+REMEMBER: to log in with explict root user, otherwise you will log in like pod user (not root) and will not have access to all databases;
+
+mysql -u root
 
 FROM:
 https://catalog.redhat.com/software/containers/rhel8/mariadb-103/5ba0acf2d70cc57b0d1d9e78
