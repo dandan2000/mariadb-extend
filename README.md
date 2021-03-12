@@ -1,15 +1,16 @@
 Extending image
 This image can be extended in Openshift using the Source build strategy.
 
-oc new-app mariadb:10.3~https://github.com/dandan2000/mariadb-extend \
-    --name my-mariadb-rhel8 \
-    --context-dir=mariadb-extend \
+oc new-app mariadb:10.3~https://github.com/dandan2000/mariadb-extend.git \
+    --name my-mariadb-rhel8 \  
     --env MYSQL_OPERATIONS_USER=opuser \
     --env MYSQL_OPERATIONS_PASSWORD=oppass \
     --env MYSQL_DATABASE=opdb \
     --env MYSQL_USER=user \
     --env MYSQL_PASSWORD=pass
 
+
+...( --context-dir=... )
 
 The directory passed to Openshift can contain these directories:
 
