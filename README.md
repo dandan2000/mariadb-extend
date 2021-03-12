@@ -1,9 +1,9 @@
 Extending image
 This image can be extended in Openshift using the Source build strategy.
 
-oc new-app -i mariadb:10.3~https://github.com/dandan2000/mariadb-extend \
+oc new-app mariadb:10.3~https://github.com/dandan2000/mariadb-extend \
     --name my-mariadb-rhel8 \
-    --context-dir=examples/extend-image \
+    --context-dir=mariadb-extend \
     --env MYSQL_OPERATIONS_USER=opuser \
     --env MYSQL_OPERATIONS_PASSWORD=oppass \
     --env MYSQL_DATABASE=opdb \
